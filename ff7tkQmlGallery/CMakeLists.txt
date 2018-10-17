@@ -27,6 +27,7 @@ find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS
 set ( ff7tkData
         ../src/data/FF7Text.cpp
         ../src/data/FF7Item.cpp
+        ../src/data/FF7Materia.cpp
     )
 
 set ( ff7tkIcons

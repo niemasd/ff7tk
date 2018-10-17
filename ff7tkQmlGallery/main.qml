@@ -9,7 +9,7 @@ ApplicationWindow {
         anchors.fill: parent
         ComboBox {
             id: combo_Selector
-            model: ["", "Text Demo", "ItemPreview"]
+            model: ["", "Text Demo", "ItemPreview", "MateriaEditor"]
             style: ComboBoxStyle {
                 textColor: SystemPalette.text
             }
@@ -45,10 +45,19 @@ ApplicationWindow {
             Layout.fillHeight: true
             Layout.fillWidth: true
         }
+        GroupBox {
+            id:group_MateriaDemo
+            visible: false
+            title: "Materia Editor"
+            MateriaEditor {
+                id:materiaDemo
+            }
+        }
     }
     function indexChanged(newIndex) {
         group_ItemDemo.visible = false
         group_TextDemo.visible = false
+        group_MateriaDemo.visible = false
 
         switch(newIndex) {
             case 1:
@@ -56,6 +65,9 @@ ApplicationWindow {
                 break;
             case 2:
                 group_ItemDemo.visible = true
+                break;
+            case 3:
+                group_MateriaDemo.visible = true
                 break;
         }
 

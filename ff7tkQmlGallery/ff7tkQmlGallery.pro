@@ -13,11 +13,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 HEADERS += ../src/data/FF7Text.h \
-           ../src/data/FF7Item.h
+           ../src/data/FF7Item.h \
+           ../src/data/FF7Materia.h
 
 SOURCES += main.cpp \
           ../src/data/FF7Text.cpp \
-          ../src/data/FF7Item.cpp
+          ../src/data/FF7Item.cpp \
+          ../src/data/FF7Materia.cpp
 
 RESOURCES += qml.qrc \
               ../src/icons/items.qrc
