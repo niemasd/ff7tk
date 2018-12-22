@@ -333,8 +333,7 @@ void MetadataCreator::on_btnSave09_clicked()
 
 void MetadataCreator::on_buttonBox_accepted()
 {
-	for(int i=0;i<10;i++)
-	{
+    for(int i=0;i<10;i++) {
 		QString OutFile =QString("%1/save0%2.ff7").arg(OutPath,QString::number(i));
 
 		if(InFiles.at(i) =="")
@@ -349,11 +348,12 @@ void MetadataCreator::on_buttonBox_accepted()
 			else{ff7->fixMetaData(OutFile,OutPath,lineUserID->text());continue;}//empty and not found
 		}
 		if(!ff7->loadFile(InFiles.at(i))){return;}
-		if(ff7->type()!="PC"){ff7->exportPC(OutFile);}
-		else
-		{
-			if(ff7->saveFile(OutFile)){/*Do Nothing*/}
-			else{QMessageBox::critical(this,QString(tr("File Error")),QString(tr("Failure to write the File: %1")).arg(OutFile));}
+        if(ff7->format()!= FF7Save::FORMAT::PC) {
+            ff7->exportPC(OutFile);
+        } else {
+            if(!ff7->saveFile(OutFile)) {
+                QMessageBox::critical(this,QString(tr("File Error")),QString(tr("Failure to write the File: %1")).arg(OutFile));
+            }
 		}
 		ff7->fixMetaData(OutFile,OutPath,lineUserID->text());
 	}

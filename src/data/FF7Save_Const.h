@@ -17,13 +17,13 @@
 #ifndef FF7_SAVE_CONSTS_H
 #define FF7_SAVE_CONSTS_H
 #include <QByteArray>
+inline static const int _slotSize = 0x10F4;
 /*~~~~~~~~~~~~~~~~~Unknown Tracking~~~~~~~~*/
 static const int unknown_zmax = 46; //Number of "z" vars.
 /*~~~~~~~~~~~~~~~~~~PC Save File ~~~~~~~~~~~~*/
 static const int FF7_PC_SAVE_GAME_SIZE = 0xFE55;
 static const int FF7_PC_SAVE_GAME_HEADER = 0x09;
 static const int FF7_PC_SAVE_GAME_FOOTER = 0x0000;
-static const int FF7_PC_SAVE_GAME_DATA_SIZE = 0x10F4;
 static const int FF7_PC_SAVE_GAME_SLOT_HEADER = 0x00;
 static const int FF7_PC_SAVE_GAME_SLOT_FOOTER = 0x0000;
 static const int FF7_PC_SAVE_GAME_SLOT_SIZE = 0x10F4;
@@ -35,7 +35,6 @@ static const quint8 PC_SAVE_GAME_FILE_HEADER[0x09] = {0x71,0x73,0x27,0x06,0x00,0
 static const int FF7_PSX_SAVE_GAME_SIZE = 0x2000;
 static const int FF7_PSX_SAVE_GAME_HEADER = 0x0000;
 static const int FF7_PSX_SAVE_GAME_FOOTER = 0x0000;
-static const int FF7_PSX_SAVE_GAME_DATA_SIZE = 0x10F4;
 static const int FF7_PSX_SAVE_GAME_SLOT_HEADER = 0x0200;
 static const int FF7_PSX_SAVE_GAME_SLOT_FOOTER = 0x0D0C;
 static const int FF7_PSX_SAVE_GAME_SLOT_SIZE = 0x2000;
@@ -213,7 +212,6 @@ static const quint8 PSX_SAVE_GAME_FILE_HEADER_S15[0x100]=
 static const int FF7_PSV_SAVE_GAME_SIZE = 0x2084;
 static const int FF7_PSV_SAVE_GAME_HEADER = 0x0084;
 static const int FF7_PSV_SAVE_GAME_FOOTER = 0x0000;
-static const int FF7_PSV_SAVE_GAME_DATA_SIZE = 0x10F4;
 static const int FF7_PSV_SAVE_GAME_SLOT_HEADER = 0x0200;
 static const int FF7_PSV_SAVE_GAME_SLOT_FOOTER = 0x0D0C;
 static const int FF7_PSV_SAVE_GAME_SLOT_SIZE = 0x2000;
@@ -224,7 +222,6 @@ static const QByteArray PSV_SAVE_GAME_FILE_ID = "\x00\x56\x53\x50";
 static const int FF7_MC_SAVE_GAME_SIZE = 0x20000;
 static const int FF7_MC_SAVE_GAME_HEADER = 0x2000;
 static const int FF7_MC_SAVE_GAME_FOOTER = 0x0000;
-static const int FF7_MC_SAVE_GAME_DATA_SIZE = 0x10F4;
 static const int FF7_MC_SAVE_GAME_SLOT_HEADER = 0x0200;
 static const int FF7_MC_SAVE_GAME_SLOT_FOOTER = 0x0D0C;
 static const int FF7_MC_SAVE_GAME_SLOT_SIZE = 0x2000;
@@ -234,7 +231,6 @@ static const QByteArray MC_SAVE_GAME_FILE_ID = "\x4D\x43";
 static const int FF7_PSP_SAVE_GAME_SIZE = 0x20080;
 static const int FF7_PSP_SAVE_GAME_HEADER = 0x2080;
 static const int FF7_PSP_SAVE_GAME_FOOTER = 0x0000;
-static const int FF7_PSP_SAVE_GAME_DATA_SIZE = 0x10F4;
 static const int FF7_PSP_SAVE_GAME_SLOT_HEADER = 0x0200;
 static const int FF7_PSP_SAVE_GAME_SLOT_FOOTER = 0x0D0C;
 static const int FF7_PSP_SAVE_GAME_SLOT_SIZE = 0x2000;
@@ -244,7 +240,6 @@ static const QByteArray PSP_SAVE_GAME_FILE_ID = "\x00\x50\x4D\x56";
 static const int FF7_VGS_SAVE_GAME_SIZE = 0x20040;
 static const int FF7_VGS_SAVE_GAME_HEADER = 0x2040;
 static const int FF7_VGS_SAVE_GAME_FOOTER = 0x0000;
-static const int FF7_VGS_SAVE_GAME_DATA_SIZE = 0x10F4;
 static const int FF7_VGS_SAVE_GAME_SLOT_HEADER = 0x0200;
 static const int FF7_VGS_SAVE_GAME_SLOT_FOOTER = 0x0D0C;
 static const int FF7_VGS_SAVE_GAME_SLOT_SIZE = 0x2000;
@@ -254,7 +249,6 @@ static const QByteArray VGS_SAVE_GAME_FILE_ID = "\x56\x67\x73\x4D";
 static const int FF7_DEX_SAVE_GAME_SIZE = 0x20F40;
 static const int FF7_DEX_SAVE_GAME_HEADER = 0x2F40;
 static const int FF7_DEX_SAVE_GAME_FOOTER = 0x0000;
-static const int FF7_DEX_SAVE_GAME_DATA_SIZE = 0x10F4;
 static const int FF7_DEX_SAVE_GAME_SLOT_HEADER = 0x0200;
 static const int FF7_DEX_SAVE_GAME_SLOT_FOOTER = 0x0D0C;
 static const int FF7_DEX_SAVE_GAME_SLOT_SIZE = 0x2000;

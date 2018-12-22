@@ -50,7 +50,7 @@ qint8 barret;
 PACK(
 struct FF7DESC {
 	quint8 level;		/**< [0x0000] Lead character's level*/
-	quint8 party[3];	/**< [0x0001] Party*/
+    qint8 party[3];     /**< [0x0001] Party*/
 	quint8 name[16];	/**< [0x0004] Lead character's name (ff7 string)*/
 	quint16 curHP;		/**< [0x0014] Lead character's current HP*/
 	quint16 maxHP;		/**< [0x0016] Lead character's base HP*/
@@ -173,10 +173,10 @@ struct FF7SLOT {
 	quint8 z_33[3];				/**< [0x0E3B] UNKNOWN DATA*/
 	quint8 stablechocorating[6];/**< [0x0E3E] Choco Billy's Rating for chocobo in stable 1-6 (same ranks as penned)*/
 	quint8 z_34[24];			/**< [0x0E44] UNKNOWN DATA*/
-	quint16 cratersaveMapId;	/**< [0x0E5C] Map id of location the portable save is on*/
-	quint16 cratersaveX;		/**< [0x0E5E] X coord of portable save*/
-	quint16 cratersaveY;		/**< [0x0E60] Y coord of portable save*/
-	quint16 cratersaveZ;		/**< [0x0E62] Z coord of portable save*/
+    qint16 cratersaveMapId;     /**< [0x0E5C] Map id of location the portable save is on*/
+    qint16 cratersaveX;         /**< [0x0E5E] X coord of portable save*/
+    qint16 cratersaveY;         /**< [0x0E60] Y coord of portable save*/
+    qint16 cratersaveZ;         /**< [0x0E62] Z coord of portable save*/
 	quint8 z_35[64];			/**< [0x0E64] UNKNOWN DATA*/
 	qint8 disc;					/**< [0x0EA4] Current CD*/
 	quint8 z_36[1];				/**< [0x0EA5] UNKNOWN DATA*/

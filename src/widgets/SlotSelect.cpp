@@ -53,7 +53,7 @@ void SlotSelect::button_clicked(int s){this->done(s);}
 
 void SlotSelect::remove_slot(int s)
 {
-	if(ff7->type()!="PC")
+    if(ff7->format()!= FF7Save::FORMAT::PC)
 	{
 		if((ff7->psx_block_type(s)!=FF7Save::BLOCK_MAIN) && (ff7->psx_block_type(s) != FF7Save::BLOCK_DELETED_MAIN)){return;}//only can remove Main blocks (they will clean up their sub blocks).
 		int size = ff7->psx_block_size(s);
@@ -74,15 +74,15 @@ void SlotSelect::remove_slot(int s)
 
 void SlotSelect::copy_slot(int s)
 {
-	if(ff7->isFF7(s)){ff7->copySlot(s);}
-	//don't Copy Non FF7 Slots Since we don't modify their region data
-	else{/*NOT FF7 SAVE INGORE*/}
+    if(ff7->isFF7(s)){ff7->copySlot(s);}
+    //don't Copy Non FF7 Slots Since we don't modify their region data
+    else{/*NOT FF7 SAVE INGORE*/}
 }
 
 void SlotSelect::paste_slot(int s)
 {
 	if(ff7->psx_block_type(s)==FF7Save::BLOCK_MIDLINK || ff7->psx_block_type(s)==FF7Save::BLOCK_ENDLINK){return;}//Don't Overwrite parts of other saves.
-	if( (!ff7->isFF7(s)) && (ff7->type()!="PC") && (ff7->psx_block_size(s)>1))
+    if( (!ff7->isFF7(s)) && (ff7->format() != FF7Save::FORMAT::PC) && (ff7->psx_block_size(s)>1))
 	{
 		int old_s = s;
 		int size = ff7->psx_block_size(s);
@@ -109,7 +109,7 @@ void SlotSelect::ReIntSlot(int s)
 
 void SlotSelect::setSlotPreview(int s)
 {
-	if(((ff7->type()!="PC") && (((ff7->psx_block_type(s)==FF7Save::BLOCK_MIDLINK) || (ff7->psx_block_type(s) == FF7Save::BLOCK_ENDLINK)) || ((ff7->psx_block_type(s)==FF7Save::BLOCK_DELETED_MIDLINK) || (ff7->psx_block_type(s) == FF7Save::BLOCK_DELETED_ENDLINK)))))
+    if(((ff7->format()!= FF7Save::FORMAT::PC) && (((ff7->psx_block_type(s)==FF7Save::BLOCK_MIDLINK) || (ff7->psx_block_type(s) == FF7Save::BLOCK_ENDLINK)) || ((ff7->psx_block_type(s)==FF7Save::BLOCK_DELETED_MIDLINK) || (ff7->psx_block_type(s) == FF7Save::BLOCK_DELETED_ENDLINK)))))
 	{
 		preview[s]->setMode(SlotPreview::MODE_PSXGAME);
 		preview[s]->setPsxIcon(ff7->slotIcon(s));
